@@ -1,0 +1,44 @@
+<%- include('../header.ejs') %> <br> <br>
+
+    <h1 class="mt-5">Course view</h1>
+    <div class="container display mt-3">
+
+        <table class="table">
+            <tr>
+                <th style="background-color: rgb(55, 184, 145);">id</th>
+                <th style="background-color: rgb(55, 184, 145);">name</th>
+                <th style="background-color: rgb(55, 184, 145);">email</th>
+                <th style="background-color: rgb(55, 184, 145);">phone</th>
+                <th style="background-color: rgb(55, 184, 145);">dob</th>
+
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <%= d._id %>
+                </td>
+                <td>
+                    <%= d.name %>
+                </td>
+                <td>
+                    <%= d.email %>
+                </td>
+                <td>
+                    <%= d.phone %>
+                </td>
+                <td>
+                    <%= d.dob %>
+                </td>
+
+            </tr>
+
+
+
+
+
+        </table>
+    </div>
+
+    <%- include('../footer.ejs') %>

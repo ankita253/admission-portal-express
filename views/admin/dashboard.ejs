@@ -1,0 +1,66 @@
+<%- include('../header.ejs') %>
+    <br><br><br>
+    <h1 class="mt-5">Admin dashboard</h1>
+    <div class="container display mt-3">
+        <table class="table">
+            <tr>
+                <th style="background-color: rgb(55, 184, 145);">S No.</th>
+                <th style="background-color: rgb(55, 184, 145);">Name</th>
+                <th style="background-color: rgb(55, 184, 145);">Course</th>
+                <th style="background-color: rgb(55, 184, 145);">Status</th>
+                <th style="background-color: rgb(55, 184, 145);">Comment</th>
+                <th></th>
+                <th style="background-color: rgb(55, 184, 145);">Action</th>
+            </tr>
+
+
+            <% i=1 %>
+                <% c.forEach((admin)=>{ %>
+                    <tbody class="table success">
+                        <tr>
+                            <td>
+                                <%=i++ %>
+                            </td>
+                            <td>
+                                <%=admin.name %>
+                            </td>
+                            <td>
+                                <%=admin.course %>
+                            </td>
+                            <td>
+                                <%=admin.status %>
+                            </td>
+                            <td>
+                                <form action="/admin/update_status/<%= admin._id %>" method="post">
+                                    <textarea name="comment" class="form-control"></textarea>
+                                    <input type="hidden" name="name" value="<%= admin.name%>">
+                                    <input type="hidden" name="email" value="<%= admin.email%>">
+                            </td>
+                            <td>
+                                <button type="submit" name="status" class="btn btn-info"
+                                    value="approved">Approved</button>
+                                <button type="submit" name="status" class="btn btn-info" value="Reject">Reject</button>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-info">view</a>
+                                <a href="" class="btn btn-success">Edit</a>
+                                <a href="" class="btn btn-danger">Delete</a>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                    <% }) %>
+
+
+        </table>
+    </div>
+
+
+
+    <%- include('../footer.ejs') %>

@@ -1,0 +1,44 @@
+<%- include('../header.ejs') %> <br> <br>
+
+    <h1 class="mt-5">Course display</h1>
+    <div class="container display mt-3">
+
+        <table class="table">
+            <tr>
+                <th style="background-color: rgb(55, 184, 145);">id</th>
+                <th style="background-color: rgb(55, 184, 145);">name</th>
+                <th style="background-color: rgb(55, 184, 145);">email</th>
+                <th style="background-color: rgb(55, 184, 145);">phone</th>
+                <th style="background-color: rgb(55, 184, 145);">action</th>
+            </tr>
+
+            <% d.forEach((item)=>{ %>
+
+                <tr>
+                    <td>
+                        <%= item._id %>
+                    </td>
+                    <td>
+                        <%= item.name %>
+                    </td>
+                    <td>
+                        <%= item.email %>
+                    </td>
+                    <td>
+                        <%= item.phone %>
+                    </td>
+                    <td>
+                        <a href="/course_view/<%= item._id %>" class="btn btn-info">Views</a>
+                        <a href="/course_edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                        <!-- <a href="/course_delete/<%= item._id %>" class="btn btn-danger">Delete</a> -->
+                    </td>
+                </tr>
+
+                <% }) %>
+
+
+
+        </table>
+    </div>
+
+    <%- include('../footer.ejs') %>

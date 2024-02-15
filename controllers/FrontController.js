@@ -237,5 +237,6 @@ class FrontController {
     }
   };
 
+
 }
 module.exports = FrontController;
